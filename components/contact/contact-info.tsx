@@ -27,7 +27,7 @@ export function ContactInfo() {
           </div>
           <div>
             <h3 className="font-semibold text-foreground">Email</h3>
-            <p className="text-muted-foreground">hello@crowdharbor.com</p>
+            <p className="text-muted-foreground">contact@crowdharbor.com</p>
           </div>
         </div>
 
@@ -37,7 +37,7 @@ export function ContactInfo() {
           </div>
           <div>
             <h3 className="font-semibold text-foreground">Phone</h3>
-            <p className="text-muted-foreground">+44 20 7946 0958</p>
+            <p className="text-muted-foreground">+49 17667287601</p>
           </div>
         </div>
 
@@ -47,7 +47,7 @@ export function ContactInfo() {
           </div>
           <div>
             <h3 className="font-semibold text-foreground">Office</h3>
-            <p className="text-muted-foreground">London, United Kingdom</p>
+            <p className="text-muted-foreground">Briach Straße 10, weingarten, Germany</p>
           </div>
         </div>
 

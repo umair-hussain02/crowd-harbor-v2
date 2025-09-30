@@ -13,10 +13,10 @@ export function PartnersSection() {
       category: "FinTech",
     },
     {
-      name: "BrewDog",
-      description: "Craft beer innovation",
-      raised: "€75M+",
-      category: "Consumer",
+      name: "Monogram Orthopaedics",
+      description: "Innovative orthopedic solutions",
+      raised: "€22M+",
+      category: "Medical",
     },
     {
       name: "Mr & Mrs Smith",
@@ -28,6 +28,7 @@ export function PartnersSection() {
 
   return (
     <section className="py-10 bg-muted/30">
+      
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -37,11 +38,10 @@ export function PartnersSection() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-6">
-            Trusted by Leaders
+            Trusted by Leading Platforms
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-12">
-            Our partnership with Crowdcube has enabled successful funding for
-            innovative companies across industries
+            Our collaborations with top crowdfunding platforms have helped innovative companies across industries secure the funding they need to grow.
           </p>
 
           {/* <motion.div
@@ -58,7 +58,7 @@ export function PartnersSection() {
         </motion.div>
 
         <LogoCarousel />
-
+            <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-6">Our Partners</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {successStories.map((story, index) => (
             <motion.div
@@ -115,19 +115,19 @@ export function PartnersSection() {
         >
           <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             <div className="space-y-2">
-              <div className="text-3xl font-bold text-accent">5+ Years</div>
+              <div className="text-3xl font-bold text-accent">2+ Years</div>
               <div className="text-muted-foreground">
-                Partnership with Crowdcube
+                Crowdfunding Platform Allies
               </div>
             </div>
             <div className="space-y-2">
-              <div className="text-3xl font-bold text-accent-teal">€110M+</div>
+              <div className="text-3xl font-bold text-accent-teal">€67M+</div>
               <div className="text-muted-foreground">
                 Raised by Featured Companies
               </div>
             </div>
             <div className="space-y-2">
-              <div className="text-3xl font-bold text-primary">100%</div>
+              <div className="text-3xl font-bold text-primary">99.37%</div>
               <div className="text-muted-foreground">
                 Success Rate for Qualified Startups
               </div>

@@ -8,7 +8,7 @@ import { Users, DollarSign } from "lucide-react"
 export function SuccessStoriesSection() {
   const stories = [
     {
-      company: "TechFlow Solutions",
+      company: "Monzo",
       industry: "FinTech",
       raised: "£2.5M",
       investors: "1,200+",
@@ -21,8 +21,8 @@ export function SuccessStoriesSection() {
       ],
     },
     {
-      company: "GreenEnergy Innovations",
-      industry: "CleanTech",
+      company: "Mr & Mrs Smith",
+      industry: "Travel",
       raised: "£4.2M",
       investors: "2,100+",
       description:

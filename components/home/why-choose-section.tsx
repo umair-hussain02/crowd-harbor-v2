@@ -8,22 +8,22 @@ export function WhyChooseSection() {
     {
       icon: Shield,
       title: "Trusted Partnership",
-      description: "Direct partnership with Crowdcube, the UK's leading equity crowdfunding platform.",
+      description: "We work with leading global crowdfunding platforms — including Wefunder, StartEngine, Republic, Crowdcube, and more.",
     },
     {
       icon: Users,
       title: "Expert Guidance",
-      description: "Our team of experienced professionals guides you through every step of the fundraising process.",
+      description: "Our team provides hands-on support, guiding founders through strategy, compliance, and campaign execution.",
     },
     {
       icon: TrendingUp,
       title: "Proven Track Record",
-      description: "We've helped startups raise over £50M through successful crowdfunding campaigns.",
+      description: "Startups we’ve supported have collectively raised millions through successful crowdfunding campaigns.",
     },
     {
       icon: Award,
       title: "End-to-End Support",
-      description: "From initial assessment to campaign launch and beyond, we're with you every step of the way.",
+      description: "From early evaluation to launch and beyond, we’re with you at every stage of your fundraising journey.",
     },
   ]
 

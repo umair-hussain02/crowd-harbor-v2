@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { ArrowRight, Calendar, TrendingUp } from "lucide-react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export function HeroSection() {
   const scrollToContact = () => {
@@ -12,12 +13,13 @@ export function HeroSection() {
       contactForm.scrollIntoView({ behavior: "smooth" });
     } else {
       // If not on contact page, navigate there
+      ////bg-gradient-to-br from-primary via-primary/10 to-purple-500
       window.location.href = "/contact#contact-form";
     }
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-primary via-primary/90 to-purple-500">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gray-50 ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left side - Image/Illustration */}
@@ -31,8 +33,9 @@ export function HeroSection() {
               {/* Animated background elements */}
               <div className="absolute inset-0 bg-gradient-to-br from-accent/20 to-teal/20 rounded-3xl blur-3xl" />
 
+              <Image src="/public/hero-graphic.webp" alt="Description of image" layout="fill" objectFit="cover" className="rounded-3xl" />
               {/* Main illustration placeholder - will be replaced with actual graphic */}
-              <div className="relative bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/20">
+              {/* <div className="relative bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/20">
                 <div className="aspect-square bg-gradient-to-br from-accent/30 to-teal/30 rounded-2xl flex items-center justify-center">
                   <div className="text-center text-white">
                     <div className="w-32 h-32 mx-auto mb-4 bg-white/20 rounded-full flex items-center justify-center">
@@ -44,7 +47,7 @@ export function HeroSection() {
                     <p className="text-sm opacity-80">Connected Ecosystem</p>
                   </div>
                 </div>
-              </div>
+              </div> */}
 
               {/* Floating elements */}
               <motion.div
@@ -89,19 +92,19 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.5 }}
-              className="text-3xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight"
+              className="text-3xl sm:text-5xl lg:text-6xl font-bold text-black leading-tight"
             >
               Connecting Startups to{" "}
-              <span className="text-accent">Equity Crowdfunding Success</span>
+              <span className="text-chart-2">Equity Crowdfunding Success</span>
             </motion.h1>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.7 }}
-              className="text-xl text-white/90 leading-relaxed"
+              className="text-xl text-black/90 leading-relaxed"
             >
-              Partnering with Crowdcube to fast-track your fundraising journey.
+              Helping founders launch and scale their campaigns across the world’s top crowdfunding platforms.
             </motion.p>
 
             <motion.div
@@ -114,7 +117,7 @@ export function HeroSection() {
               <Button
                 onClick={scrollToContact}
                 size="lg"
-                className="text-lg px-8 py-6 group bg-accent hover:bg-accent/90 text-white border-0 w-full sm:w-auto"
+                className="text-lg px-8 py-6 group bg-chart-2 hover:bg-chart-2/90 text-white border-0 w-full sm:w-auto"
               >
                 <Calendar className="mr-2 h-5 w-5" />
                 Schedule Free Consultation
@@ -127,7 +130,7 @@ export function HeroSection() {
                   asChild
                   variant="outline"
                   size="lg"
-                  className="text-lg px-6 py-6 bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20"
+                  className="text-lg px-6 py-6 bg-black/10 backdrop-blur-sm border-black/30 text-black hover:bg-black/20"
                 >
                   <Link href="/services">For Startups</Link>
                 </Button>
@@ -135,7 +138,7 @@ export function HeroSection() {
                   asChild
                   variant="outline"
                   size="lg"
-                  className="text-lg px-6 py-6 bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20"
+                  className="text-lg px-6 py-6 bg-black/10 backdrop-blur-sm border-black/30 text-black hover:bg-black/20"
                 >
                   <Link href="/services">For Investors</Link>
                 </Button>

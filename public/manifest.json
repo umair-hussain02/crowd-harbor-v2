@@ -1,0 +1,21 @@
+{
+  "name": "CrowdHarbor - Equity Crowdfunding Success",
+  "short_name": "CrowdHarbor",
+  "description": "Connecting startups to equity crowdfunding success through trusted Crowdcube partnership",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#667eea",
+  "icons": [
+    {
+      "src": "/favicon-192.jpg",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-512.jpg",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

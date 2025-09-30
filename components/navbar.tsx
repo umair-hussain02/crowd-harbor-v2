@@ -5,6 +5,7 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Menu, X, Moon, Sun, Calendar, Home, Info, Briefcase, Mail, BookOpen } from "lucide-react"
 import { useTheme } from "next-themes"
+import Image from "next/image"
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -38,7 +39,7 @@ export function Navbar() {
         <div className="flex justify-between items-center h-16">
           <div className="flex-shrink-0">
             <Link href="/" className="text-2xl font-bold text-primary">
-              CrowdHarbor
+              <Image src="/logopng.png" alt="CrowdHarbor Logo" width={95} height={90} />
             </Link>
           </div>
 

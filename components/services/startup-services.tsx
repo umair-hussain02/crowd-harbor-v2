@@ -5,43 +5,43 @@ import { TrendingUp, Users, FileText, Target, Lightbulb, BarChart } from "lucide
 
 export function StartupServices() {
   const services = [
-    {
-      icon: TrendingUp,
-      title: "Capital Raising",
-      description: "Raise €200k-€8M through equity crowdfunding with our proven strategies and Crowdcube partnership.",
-      features: ["Funding strategy development", "Valuation guidance", "Campaign optimization"],
-    },
-    {
-      icon: Users,
-      title: "Consultation & Support",
-      description: "Expert guidance throughout your entire crowdfunding journey from preparation to post-funding.",
-      features: ["One-on-one consultation", "Campaign planning", "Investor relations support"],
-    },
-    {
-      icon: FileText,
-      title: "Referral Process",
-      description: "Streamlined introduction to Crowdcube with enhanced visibility and platform benefits.",
-      features: ["Application assistance", "Platform onboarding", "Enhanced campaign visibility"],
-    },
-    {
-      icon: Target,
-      title: "Market Positioning",
-      description: "Strategic positioning to maximize investor appeal and campaign success rates.",
-      features: ["Competitive analysis", "Value proposition refinement", "Market opportunity assessment"],
-    },
-    {
-      icon: Lightbulb,
-      title: "Campaign Strategy",
-      description: "Comprehensive campaign planning and execution strategies for maximum funding success.",
-      features: ["Marketing strategy", "Investor targeting", "Timeline optimization"],
-    },
-    {
-      icon: BarChart,
-      title: "Performance Analytics",
-      description: "Data-driven insights and campaign performance monitoring for continuous optimization.",
-      features: ["Real-time analytics", "Performance reporting", "Success metrics tracking"],
-    },
-  ]
+  {
+    icon: TrendingUp,
+    title: "Capital Raising",
+    description: "Raise €200k-€8M through equity crowdfunding with our proven strategies and Crowdcube partnership.",
+    features: ["Funding strategy development", "Valuation guidance", "Campaign optimization"],
+  },
+  {
+    icon: Users,
+    title: "Consultation & Support",
+    description: "Expert guidance throughout your entire crowdfunding journey from preparation to post-funding.",
+    features: ["One-on-one consultation", "Campaign planning", "Investor relations support"],
+  },
+  {
+    icon: FileText,
+    title: "Referral Process",
+    description: "Streamlined introduction to Crowdcube with enhanced visibility and platform benefits.",
+    features: ["Application assistance", "Platform onboarding", "Enhanced campaign visibility"],
+  },
+  {
+    icon: Target,
+    title: "Market Positioning",
+    description: "Strategic positioning to maximize investor appeal and campaign success rates.",
+    features: ["Competitive analysis", "Value proposition refinement", "Market opportunity assessment"],
+  },
+  {
+    icon: Lightbulb,
+    title: "Campaign Strategy",
+    description: "Comprehensive campaign planning and execution strategies for maximum funding success.",
+    features: ["Marketing strategy", "Investor targeting", "Timeline optimization"],
+  },
+  {
+    icon: BarChart,
+    title: "Performance Analytics",
+    description: "Data-driven insights and campaign performance monitoring for continuous optimization.",
+    features: ["Real-time analytics", "Performance reporting", "Success metrics tracking"],
+  },
+];
 
   return (
     <section className="py-24 bg-background">
@@ -53,10 +53,9 @@ export function StartupServices() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6">For Startups</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6">Intended Startups & Businesses</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Comprehensive services to help your startup successfully raise equity capital through crowdfunding
-          </p>
+            Comprehensive services to help startups successfully raise equity capital through leading crowdfunding platforms (Reg CF → Reg A).       </p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

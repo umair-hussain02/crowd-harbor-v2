@@ -11,8 +11,7 @@ export function Footer() {
               CrowdHarbor
             </Link>
             <p className="mt-4 text-gray-300 max-w-md">
-              Connecting innovative startups with equity crowdfunding opportunities through our trusted partnership with
-              Crowdcube.
+              Connecting innovative startups with the right equity crowdfunding platforms — from Wefunder and StartEngine to Republic, Crowdcube, FundingHope and more.
             </p>
           </div>
 

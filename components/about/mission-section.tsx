@@ -16,19 +16,15 @@ export function MissionSection() {
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6">Our Story & Mission</h2>
             <div className="space-y-6 text-muted-foreground leading-relaxed">
               <p>
-                CrowdHarbor was founded with a simple yet powerful vision: to bridge the gap between innovative startups
-                and the capital they need to scale. We recognized that many promising entrepreneurs struggle to access
-                traditional funding channels, while equity crowdfunding platforms like Crowdcube offer unprecedented
-                opportunities.
+                CrowdHarbor was founded with a simple, powerful vision: to bridge the gap between innovative startups and the capital they need to scale. We saw that many promising entrepreneurs struggle to access traditional funding channels, while leading equity crowdfunding platforms open new routes to growth.
+
               </p>
               <p>
-                Our team combines deep expertise in startup ecosystems, investment strategies, and crowdfunding
-                dynamics. We don't just facilitate introductions – we provide comprehensive support, strategic guidance,
-                and ongoing consultation to maximize the success of every funding campaign.
+                Our team blends deep expertise in startup ecosystems, investment strategy, and crowdfunding dynamics. We don’t just make introductions — we deliver comprehensive support, strategic guidance, and ongoing consultation to maximize each campaign’s chance of success. Think big, raise smart — we scout the best crowdfunding fit so founders don’t waste time knocking on the wrong doors.
+
               </p>
               <p>
-                Through our trusted partnership with Crowdcube, we've helped startups raise millions in equity funding,
-                enabling them to scale their operations, expand their teams, and bring innovative products to market.
+                Through trusted partnerships with platforms like Crowdcube, StartEngine, and Republic, we’ve helped startups raise millions in equity funding, enabling them to expand teams, scale operations, and bring bold ideas to market.
               </p>
             </div>
           </motion.div>
@@ -40,28 +36,30 @@ export function MissionSection() {
             viewport={{ once: true }}
             className="bg-card border border-border rounded-2xl p-8"
           >
-            <h3 className="text-2xl font-bold text-foreground mb-6">Partnership with Crowdcube</h3>
+            <h3 className="text-2xl font-bold text-foreground mb-6">Platform Partnerships & Benefits</h3>
+            <p className="pb-4 text-gray-800">Through our partnerships with Crowdcube, StartEngine, and Republic, CrowdHarbor gives startups one gateway to multiple investor pools and platform tools:</p>
             <div className="space-y-4">
               <div className="flex items-start space-x-4">
                 <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0" />
                 <p className="text-muted-foreground">
-                  Exclusive access to Crowdcube's investor network and platform features
+                  Wide investor access: tap UK/EU, U.S., and global investor networks to maximize reach.
                 </p>
               </div>
               <div className="flex items-start space-x-4">
                 <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0" />
                 <p className="text-muted-foreground">
-                  Streamlined application and onboarding process for qualified startups
+                  Streamlined onboarding: fast, guided application and compliance support tailored to each platform.
                 </p>
               </div>
               <div className="flex items-start space-x-4">
                 <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0" />
-                <p className="text-muted-foreground">Enhanced campaign visibility and marketing support</p>
+                <p className="text-muted-foreground">Stronger campaign visibility: platform marketing, curated promotion, and community-growth tools to boost investor interest.</p>
               </div>
               <div className="flex items-start space-x-4">
                 <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0" />
-                <p className="text-muted-foreground">Post-funding support and investor relations guidance</p>
+                <p className="text-muted-foreground">Post-funding support: investor relations, nominee/administration help, and guidance for next-stage fundraising.</p>
               </div>
+              <p className="text-gray-800">We match your company to the platform that fits your stage and goals, then coordinate introductions and hands-on support so you can focus on growth.</p>
             </div>
           </motion.div>
         </div>

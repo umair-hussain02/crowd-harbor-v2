@@ -8,25 +8,25 @@ export function TimelineSection() {
       phase: "Discovery",
       title: "Startup Identification",
       description:
-        "We identify promising startups with innovative business models and strong growth potential through our extensive network and market research.",
+        "We scout high-potential startups with innovative models and clear growth signals using our network and market research.",
     },
     {
       phase: "Evaluation",
-      title: "Due Diligence",
+      title: "Value & Scalability Review",
       description:
-        "Comprehensive assessment of business viability, market opportunity, team strength, and funding readiness to ensure optimal success rates.",
+        "We assess business value, market presence, scalability, team strength, and fundraising readiness — ensuring the company meets platform-specific requirements before any introduction.",
     },
     {
       phase: "Introduction",
-      title: "Crowdcube Partnership",
+      title: "Platform Match & Warm Hand-off",
       description:
-        "Facilitated introduction to Crowdcube's platform with enhanced visibility and access to their extensive investor network.",
+        "We match your business to the best-suited platform (Crowdcube, StartEngine, Republic, etc.) and make a warm introduction only when the fit is right — preventing wasted time and wrong-door approaches.",
     },
     {
       phase: "Support",
-      title: "Campaign Success",
+      title: "Campaign Handoff & Success",
       description:
-        "Ongoing consultation, strategic guidance, and campaign optimization to maximize funding outcomes and investor engagement.",
+        "After the match, the partner platform leads fundraising and assigns campaign and strategy managers. We continue to provide guidance and coordination to optimize campaign performance and investor engagement.",
     },
   ]
 
@@ -42,7 +42,7 @@ export function TimelineSection() {
         >
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6">From Startup to Success</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Our proven process takes startups from initial assessment to successful equity crowdfunding campaigns
+            Our proven process takes startups from initial assessment to successful equity crowdfunding campaigns.
           </p>
         </motion.div>
 

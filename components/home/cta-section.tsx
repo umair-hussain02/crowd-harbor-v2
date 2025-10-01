@@ -74,8 +74,8 @@ export function CTASection() {
               viewport={{ once: true }}
               className="text-xl text-white/90 max-w-3xl mx-auto mb-12"
             >
-              Join the innovative companies that have successfully raised over £50M through our Crowdcube partnership.
-              Your fundraising journey starts with a free consultation.
+              Join the innovative companies that have successfully raised millions through leading crowdfunding platforms. Your fundraising journey starts with a free consultation.
+
             </motion.p>
 
             <motion.div
@@ -113,7 +113,7 @@ export function CTASection() {
               viewport={{ once: true }}
               className="pt-12 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto"
             >
-              <div className="text-center">
+              {/* <div className="text-center">
                 <div className="text-3xl font-bold text-white mb-2">£50M+</div>
                 <div className="text-white/70 text-sm">Successfully Raised</div>
               </div>
@@ -124,7 +124,7 @@ export function CTASection() {
               <div className="text-center">
                 <div className="text-3xl font-bold text-accent-teal mb-2">95%</div>
                 <div className="text-white/70 text-sm">Success Rate</div>
-              </div>
+              </div> */}
             </motion.div>
           </div>
         </motion.div>

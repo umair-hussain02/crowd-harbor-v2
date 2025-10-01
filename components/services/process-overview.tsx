@@ -10,8 +10,8 @@ export function ProcessOverview() {
     "Initial consultation and startup assessment",
     "Due diligence and funding readiness evaluation",
     "Campaign strategy development and planning",
-    "Introduction to Crowdcube platform and network",
-    "Campaign launch and ongoing optimization support",
+    "Platform match & warm introduction to the right crowdfunding network",
+    "Campaign launch and live optimization support",
     "Post-funding guidance and investor relations",
   ]
 
@@ -27,8 +27,7 @@ export function ProcessOverview() {
           >
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6">Our Proven Process</h2>
             <p className="text-xl text-muted-foreground mb-8">
-              A systematic approach to equity crowdfunding success, refined through years of experience and successful
-              campaigns.
+              A systematic approach to equity crowdfunding success, refined through hands-on experience and successful campaigns.
             </p>
 
             <div className="space-y-4 mb-8">
@@ -65,19 +64,19 @@ export function ProcessOverview() {
             <h3 className="text-2xl font-bold text-foreground mb-6">Success Metrics</h3>
             <div className="grid grid-cols-2 gap-6">
               <div className="text-center">
-                <div className="text-3xl font-bold text-primary mb-2">€110M+</div>
+                <div className="text-3xl font-bold text-primary mb-2">€50M+</div>
                 <div className="text-sm text-muted-foreground">Total Raised</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-primary mb-2">150+</div>
+                <div className="text-3xl font-bold text-primary mb-2">70+</div>
                 <div className="text-sm text-muted-foreground">Startups Supported</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-primary mb-2">85%</div>
+                <div className="text-3xl font-bold text-primary mb-2">95%</div>
                 <div className="text-sm text-muted-foreground">Success Rate</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-primary mb-2">5000+</div>
+                <div className="text-3xl font-bold text-primary mb-2">200+</div>
                 <div className="text-sm text-muted-foreground">Investors Connected</div>
               </div>
             </div>

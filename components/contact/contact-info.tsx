@@ -47,7 +47,7 @@ export function ContactInfo() {
           </div>
           <div>
             <h3 className="font-semibold text-foreground">Office</h3>
-            <p className="text-muted-foreground">Briach Straße 10, weingarten, Germany</p>
+            <p className="text-muted-foreground">Weingarten, Germany</p>
           </div>
         </div>
 
@@ -70,7 +70,7 @@ export function ContactInfo() {
         <p className="text-muted-foreground mb-4">
           Schedule a 30-minute consultation to discuss your startup's funding goals and explore how we can help.
         </p>
-        <Button className="w-full">Schedule Consultation</Button>
+        {/* <Button className="w-full">Schedule Consultation</Button> */}
       </div>
 
       <div className="bg-card border border-border rounded-2xl p-6">
@@ -78,15 +78,17 @@ export function ContactInfo() {
         <ul className="space-y-2">
           <li className="flex items-center text-muted-foreground">
             <div className="w-1.5 h-1.5 bg-primary rounded-full mr-3 flex-shrink-0" />
-            Initial assessment of your funding needs
+            {/* <h3 className="font-bold block">Initial assessment of your funding needs</h3> */}
+            <div>We review your business model, target raise, use of funds, traction, and investor profile to determine crowdfunding readiness.</div>
+
           </li>
           <li className="flex items-center text-muted-foreground">
             <div className="w-1.5 h-1.5 bg-primary rounded-full mr-3 flex-shrink-0" />
-            Discussion of crowdfunding strategy
+            <div>We recommend the best-fit platform(s) (Reg CF vs Reg A and regional fit), outline campaign structure, messaging and promotional requirements, and identify any gaps you should close before launch.</div>
           </li>
           <li className="flex items-center text-muted-foreground">
             <div className="w-1.5 h-1.5 bg-primary rounded-full mr-3 flex-shrink-0" />
-            Next steps and timeline overview
+            <div>We agree the recommended path, required documents and compliance steps, and the intro process — then provide a clear launch checklist and milestones to move your campaign toward live status.</div>
           </li>
         </ul>
       </div>

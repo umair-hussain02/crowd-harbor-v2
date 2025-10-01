@@ -6,25 +6,25 @@ import { LogoCarousel } from "./logo-carousel";
 
 export function PartnersSection() {
   const successStories = [
-    {
-      name: "Monzo",
-      description: "Digital banking revolution",
-      raised: "€20M+",
-      category: "FinTech",
-    },
-    {
-      name: "Monogram Orthopaedics",
-      description: "Innovative orthopedic solutions",
-      raised: "€22M+",
-      category: "Medical",
-    },
-    {
-      name: "Mr & Mrs Smith",
-      description: "Boutique hotel platform",
-      raised: "€15M+",
-      category: "Travel",
-    },
-  ];
+  {
+    name: "Crowdcube",
+    description: "Europe’s leading equity crowdfunding platform connecting startups with retail and institutional investors across the UK and EU.",
+    raised: "£1.4B+",
+    category: "Equity Crowdfunding Platform"
+  },
+  {
+    name: "StartEngine",
+    description: "U.S. equity crowdfunding marketplace that helps startups raise capital via Reg CF and Reg A while building active investor communities.",
+    raised: "$1.2B+",
+    category: "Equity Crowdfunding Platform"
+  },
+  {
+    name: "Republic",
+    description: "Global investment platform offering equity crowdfunding and alternative investments, connecting startups and accredited investors worldwide.",
+    raised: "$3B+",
+    category: "Equity Crowdfunding Platform"
+  }
+]
 
   return (
     <section className="py-10 bg-muted/30">
@@ -79,9 +79,9 @@ export function PartnersSection() {
 
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
-                    <h3 className="text-xl font-bold text-foreground">
+                    {/* <h3 className="text-xl font-bold text-foreground">
                       {story.name}
-                    </h3>
+                    </h3> */}
                     <Badge
                       variant="secondary"
                       className="bg-accent/10 text-accent border-accent/20"
@@ -121,13 +121,13 @@ export function PartnersSection() {
               </div>
             </div>
             <div className="space-y-2">
-              <div className="text-3xl font-bold text-accent-teal">€67M+</div>
+              <div className="text-3xl font-bold text-accent-teal">$37M+</div>
               <div className="text-muted-foreground">
                 Raised by Featured Companies
               </div>
             </div>
             <div className="space-y-2">
-              <div className="text-3xl font-bold text-primary">99.37%</div>
+              <div className="text-3xl font-bold text-primary">97.37%</div>
               <div className="text-muted-foreground">
                 Success Rate for Qualified Startups
               </div>

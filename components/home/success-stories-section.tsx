@@ -127,7 +127,7 @@ export function SuccessStoriesSection() {
               <div className="text-muted-foreground">Total Raised</div>
             </div>
             <div className="space-y-2">
-              <div className="text-4xl font-bold text-accent">150+</div>
+              <div className="text-4xl font-bold text-accent">50+</div>
               <div className="text-muted-foreground">Successful Campaigns</div>
             </div>
             <div className="space-y-2">

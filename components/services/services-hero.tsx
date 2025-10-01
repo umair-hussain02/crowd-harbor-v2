@@ -13,7 +13,7 @@ export function ServicesHero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center "
         >
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6">Our Services</h1>
           <p className="text-xl sm:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed mb-8">
@@ -28,7 +28,7 @@ export function ServicesHero() {
           </Button>
         </motion.div>
 
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
@@ -46,7 +46,7 @@ export function ServicesHero() {
               Access curated investment opportunities and build networks with innovative businesses
             </p>
           </div>
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   )

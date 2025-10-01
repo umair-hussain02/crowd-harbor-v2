@@ -4,14 +4,12 @@ import { motion } from "framer-motion";
 
 export function LogoCarousel() {
   const logos = [
-    { name: "Monzo", logo: "MONZO" },
-    { name: "BrewDog", logo: "BREWDOG" },
-    { name: "Mr & Mrs Smith", logo: "MR & MRS SMITH" },
+    { name: "StartEngine", logo: "StartEngine" },
+    { name: "FundingHope", logo: "FundingHope" },
+    { name: "Republic", logo: "Republic" },
     { name: "Crowdcube", logo: "CROWDCUBE" },
-    { name: "Revolut", logo: "REVOLUT" },
-    { name: "Starling Bank", logo: "STARLING" },
-    { name: "Freetrade", logo: "FREETRADE" },
-    { name: "Chip", logo: "CHIP" },
+    { name: "Wefunder", logo: "WEFUNDER" },
+    { name: "AngelInvestmentNetwork", logo: "ANGELINVESTMENTNETWORK" },
   ];
 
   // Duplicate logos for seamless loop

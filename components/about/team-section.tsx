@@ -22,14 +22,14 @@ export function TeamSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {[
             {
-              name: "Sarah Chen",
+              name: "Ahmad Ali",
               role: "Founder & CEO",
-              expertise: "Former VC partner with 15+ years in startup investments and crowdfunding strategy.",
+              expertise: "Crowdcube executive specializing in platform relationships and investor networks.",
             },
             {
-              name: "Marcus Rodriguez",
-              role: "Head of Partnerships",
-              expertise: "Ex-Crowdcube executive specializing in platform relationships and investor networks.",
+              name: "Umair Hussain",
+              role: "Co-Founder & CTO",
+              expertise: "Tech entrepreneur with a track record of building scalable platforms for startups.",
             },
             {
               name: "Dr. Emily Watson",

@@ -29,7 +29,7 @@ export default function ServicesPage() {
         <main>
           <ServicesHero />
           <StartupServices />
-          <InvestorServices />
+          {/* <InvestorServices /> */}
           <ProcessOverview />
         </main>
         <Footer />

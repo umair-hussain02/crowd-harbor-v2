@@ -15,8 +15,7 @@ export function AboutHero() {
         >
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6">About CrowdHarbor</h1>
           <p className="text-xl sm:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-            We are the bridge between innovative startups and equity crowdfunding success, partnering with Crowdcube to
-            unlock growth opportunities for tomorrow's industry leaders.
+            CrowdHarbor connects startups with Crowdcube, StartEngine, Republic and more — think big, raise smart: we scout the best crowdfunding fit so founders don’t waste time knocking on the wrong doors.
           </p>
         </motion.div>
 
@@ -26,18 +25,18 @@ export function AboutHero() {
               icon: Target,
               title: "Our Mission",
               description:
-                "To democratize startup funding by connecting promising entrepreneurs with equity crowdfunding opportunities.",
+                "To democratize startup funding by connecting promising entrepreneurs with top equity crowdfunding platforms.",
             },
             {
               icon: Users,
               title: "Our Approach",
               description:
-                "We provide personalized consultation and support throughout the entire crowdfunding journey.",
+                "We provide personalized consultation and hands-on support throughout the crowdfunding journey.",
             },
             {
               icon: Handshake,
               title: "Our Partnership",
-              description: "Trusted collaboration with Crowdcube to maximize funding success for innovative startups.",
+              description: "Trusted partnerships with Crowdcube, StartEngine, and Republic to maximize funding success for startups.",
             },
           ].map((item, index) => (
             <motion.div

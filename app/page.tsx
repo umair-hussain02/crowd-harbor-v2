@@ -8,6 +8,7 @@ import { WhyChooseSection } from "@/components/home/why-choose-section"
 import { SuccessStoriesSection } from "@/components/home/success-stories-section"
 import { BlogSection } from "@/components/home/blog-section"
 import { CTASection } from "@/components/home/cta-section"
+import Hero from "@/components/home/hero"
 
 export default function HomePage() {
   return (

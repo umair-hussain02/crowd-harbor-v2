@@ -7,25 +7,25 @@ export function HowItWorksSection() {
   const steps = [
     {
       icon: Search,
-      title: "Identify Startups",
+      title: "Discover High-Potential Startups",
       description:
-        "We scout and identify promising startups with strong growth potential and innovative business models.",
+        "We scout ambitious founders and innovative startups with strong growth potential, identifying those best suited for equity crowdfunding success.",
       color: "text-primary",
       bgColor: "bg-primary/10",
     },
     {
       icon: Handshake,
-      title: "Introduce to Crowdcube",
+      title: "Connect with Leading Platforms",
       description:
-        "We facilitate introductions to Crowdcube's platform, leveraging our trusted partnership for faster onboarding.",
+        "Through our trusted network of top platforms — including Wefunder, StartEngine, Republic, Crowdcube, and more — we facilitate introductions and streamline the onboarding process.",
       color: "text-accent",
       bgColor: "bg-accent/10",
     },
     {
       icon: Rocket,
-      title: "Support Founders",
+      title: "Empower Founders to Succeed",
       description:
-        "We provide ongoing support throughout the fundraising process, ensuring campaigns are optimized for success.",
+        "From strategy to launch, we guide founders through every step of the fundraising journey, ensuring campaigns are optimized, compliant, and ready to attract investors.",
       color: "text-accent-teal",
       bgColor: "bg-accent-teal/10",
     },

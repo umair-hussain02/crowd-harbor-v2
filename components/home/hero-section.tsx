@@ -19,57 +19,13 @@ export function HeroSection() {
   };
 
   return (
+    
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gray-50 ">
+      
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left side - Image/Illustration */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="relative"
-          >
-            <div className="relative">
-              {/* Animated background elements */}
-              <div className="absolute inset-0 bg-gradient-to-br from-accent/20 to-teal/20 rounded-3xl blur-3xl" />
-
-              <Image src="/public/hero-graphic.webp" alt="Description of image" layout="fill" objectFit="cover" className="rounded-3xl" />
-              {/* Main illustration placeholder - will be replaced with actual graphic */}
-              {/* <div className="relative bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/20">
-                <div className="aspect-square bg-gradient-to-br from-accent/30 to-teal/30 rounded-2xl flex items-center justify-center">
-                  <div className="text-center text-white">
-                    <div className="w-32 h-32 mx-auto mb-4 bg-white/20 rounded-full flex items-center justify-center">
-                      <TrendingUp className="w-16 h-16" />
-                    </div>
-                    <p className="text-lg font-semibold">
-                      Startup Growth Network
-                    </p>
-                    <p className="text-sm opacity-80">Connected Ecosystem</p>
-                  </div>
-                </div>
-              </div> */}
-
-              {/* Floating elements */}
-              <motion.div
-                animate={{ y: [-10, 10, -10] }}
-                transition={{
-                  duration: 4,
-                  repeat: Number.POSITIVE_INFINITY,
-                  ease: "easeInOut",
-                }}
-                className="absolute -top-4 -right-4 w-20 h-20 bg-accent/30 rounded-full blur-xl"
-              />
-              <motion.div
-                animate={{ y: [10, -10, 10] }}
-                transition={{
-                  duration: 3,
-                  repeat: Number.POSITIVE_INFINITY,
-                  ease: "easeInOut",
-                }}
-                className="absolute -bottom-6 -left-6 w-16 h-16 bg-teal/30 rounded-full blur-xl"
-              />
-            </div>
-          </motion.div>
+          
 
           {/* Right side - Content */}
           <motion.div

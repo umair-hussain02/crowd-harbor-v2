@@ -8,41 +8,41 @@ import { Users, DollarSign } from "lucide-react"
 export function SuccessStoriesSection() {
   const stories = [
     {
-      company: "Monzo",
-      industry: "FinTech",
-      raised: "£2.5M",
-      investors: "1,200+",
+      company: "Monogram Orthopeadics",
+      industry: "HealthTech",
+      raised: "$22.5M",
+      investors: "1,2000+",
       description:
-        "Revolutionary payment processing platform that secured funding in just 6 weeks through our Crowdcube partnership.",
+        "Innovative medical device company that raised $22.5M to revolutionize orthopedic care with custom implants.",
       metrics: [
-        { label: "Target", value: "£1.5M" },
-        { label: "Raised", value: "£2.5M" },
+        { label: "Target", value: "$1.5M" },
+        { label: "Min", value: "$250" },
         { label: "Overfunding", value: "167%" },
       ],
     },
     {
-      company: "Mr & Mrs Smith",
-      industry: "Travel",
-      raised: "£4.2M",
-      investors: "2,100+",
+      company: "Boxabl",
+      industry: "Mass Production",
+      raised: "$24M",
+      investors: "10,000+",
       description:
-        "Sustainable energy startup that exceeded their funding goal by 210% with our strategic campaign support.",
+        "Pioneering mass-produced housing solutions, Boxabl raised $24M to scale affordable, sustainable homes globally.",
       metrics: [
-        { label: "Target", value: "£2M" },
-        { label: "Raised", value: "£4.2M" },
+        { label: "Target", value: "$2M" },
+        { label: "Min", value: "$1K" },
         { label: "Overfunding", value: "210%" },
       ],
     },
     {
-      company: "HealthTech Pro",
-      industry: "HealthTech",
-      raised: "£1.8M",
-      investors: "850+",
-      description: "AI-powered healthcare platform that successfully raised capital for international expansion.",
+      company: "Control Plus",
+      industry: "IT Services",
+      raised: "$1.2M",
+      investors: "240+",
+      description: "Control+ is dedicated to protecting online consumers against cyber threats through advanced artificial intelligence. ", // dedicated to protectect online consumer
       metrics: [
-        { label: "Target", value: "£1.5M" },
-        { label: "Raised", value: "£1.8M" },
-        { label: "Overfunding", value: "120%" },
+        { label: "Target", value: "$1.5M" },
+        { label: "Min", value: "$100" },
+        { label: "Overfunding", value: "12%" },
       ],
     },
   ]

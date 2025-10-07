@@ -12,7 +12,7 @@ export interface Inquiry {
   status: "new" | "contacted" | "closed"
 }
 
-export async function saveInquiry(inquiry: Omit<Inquiry, "id">): Promise<Inquiry> {
+export async function   saveInquiry(inquiry: Omit<Inquiry, "id">): Promise<Inquiry> {
   try {
     await connectDB()
 

@@ -13,21 +13,15 @@ export function HeroSection() {
       contactForm.scrollIntoView({ behavior: "smooth" });
     } else {
       // If not on contact page, navigate there
-      ////bg-gradient-to-br from-primary via-primary/10 to-purple-500
       window.location.href = "/contact#contact-form";
     }
   };
 
   return (
-    
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gray-50 ">
-      
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden hero-gradient">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left side - Image/Illustration */}
-          
-
-          {/* Right side - Content */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -48,19 +42,19 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.5 }}
-              className="text-3xl sm:text-5xl lg:text-6xl font-bold text-black leading-tight"
+              className="text-3xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-tight"
             >
               Connecting Startups to{" "}
-              <span className="text-chart-2">Equity Crowdfunding Success</span>
+              <span className="text-accent">Equity Crowdfunding Success</span>
             </motion.h1>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.7 }}
-              className="text-xl text-black/90 leading-relaxed"
+              className="text-xl text-foreground leading-relaxed"
             >
-              Helping founders launch and scale their campaigns across the world’s top crowdfunding platforms.
+              Partnering with Crowdcube to fast-track your fundraising journey.
             </motion.p>
 
             <motion.div
@@ -73,7 +67,7 @@ export function HeroSection() {
               <Button
                 onClick={scrollToContact}
                 size="lg"
-                className="text-lg px-8 py-6 group bg-chart-2 hover:bg-chart-2/90 text-white border-0 w-full sm:w-auto"
+                className="text-lg px-8 py-6 group bg-accent hover:bg-accent/90 text-white border-0 w-full sm:w-auto"
               >
                 <Calendar className="mr-2 h-5 w-5" />
                 Schedule Free Consultation
@@ -86,7 +80,7 @@ export function HeroSection() {
                   asChild
                   variant="outline"
                   size="lg"
-                  className="text-lg px-6 py-6 bg-black/10 backdrop-blur-sm border-black/30 text-black hover:bg-black/20"
+                  className="text-lg px-6 py-6 bg-background/10 backdrop-blur-sm border-foreground/30 text-foreground hover:bg-foreground/20 hover:text-chart-3"
                 >
                   <Link href="/services">For Startups</Link>
                 </Button>
@@ -94,7 +88,7 @@ export function HeroSection() {
                   asChild
                   variant="outline"
                   size="lg"
-                  className="text-lg px-6 py-6 bg-black/10 backdrop-blur-sm border-black/30 text-black hover:bg-black/20"
+                  className="text-lg px-6 py-6 bg-background/10 backdrop-blur-sm border-foreground/30 text-foreground hover:bg-foreground/20 hover:text-chart-3"
                 >
                   <Link href="/services">For Investors</Link>
                 </Button>
@@ -118,6 +112,26 @@ export function HeroSection() {
               </div>
             </motion.div> */}
           </motion.div>
+
+          {/* Right side - Content */}
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="relative"
+          >
+             <Image
+              src="1.png"
+              alt="Equity crowdfunding growth illustration"
+              width={1200}
+              height={800}
+              priority
+              className="w-full h-auto"
+            />
+          </motion.div>
+
+          
+          
         </div>
       </div>
 

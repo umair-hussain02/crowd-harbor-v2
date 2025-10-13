@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Mail, Linkedin, Twitter, Shield, Instagram } from "lucide-react"
+import { Mail, Linkedin, Twitter, Shield, Instagram, Facebook } from "lucide-react"
 
 export function Footer() {
   return (
@@ -58,6 +58,9 @@ export function Footer() {
               </a>
               <a href="https://www.instagram.com/crowdharbor/" className="text-gray-300 hover:text-white transition-colors">
                 <Instagram className="h-5 w-5" />
+              </a>
+              <a href="https://www.facebook.com/share/1BqN87eTEp/" className="text-gray-300 hover:text-white transition-colors">
+                <Facebook className="h-5 w-5" />
               </a>
 
             </div>

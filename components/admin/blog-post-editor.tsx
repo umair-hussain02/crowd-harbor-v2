@@ -1,7 +1,6 @@
 "use client"
 
 import type React from "react"
-
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -35,12 +34,12 @@ export function BlogPostEditor({ post, onSave, onCancel, getAuthHeaders }: BlogP
   useEffect(() => {
     if (post) {
       setFormData({
-        title: post.title,
-        excerpt: post.excerpt,
-        content: post.content,
-        image: post.image,
-        author: post.author,
-        published: post.published,
+        title: post.title || "",
+        excerpt: post.excerpt || "",
+        content: post.content || "",
+        image: post.image || "",
+        author: post.author || "",
+        published: post.published || false,
       })
     } else {
       setFormData({
@@ -60,8 +59,9 @@ export function BlogPostEditor({ post, onSave, onCancel, getAuthHeaders }: BlogP
     setSaving(true)
 
     try {
-      const url = post ? `/api/admin/blogs/${post.id}` : "/api/admin/blogs"
-      const method = post ? "PUT" : "POST"
+      // ✅ FIXED: use post._id instead of post.id
+      const url = post?._id ? `/api/admin/blogs/${post._id}` : "/api/admin/blogs"
+      const method = post?._id ? "PUT" : "POST"
 
       const response = await fetch(url, {
         method,
@@ -79,6 +79,7 @@ export function BlogPostEditor({ post, onSave, onCancel, getAuthHeaders }: BlogP
         setError(data.error || "Failed to save post")
       }
     } catch (error) {
+      console.error("Error saving blog post:", error)
       setError("Failed to save post. Please try again.")
     } finally {
       setSaving(false)
@@ -126,18 +127,19 @@ export function BlogPostEditor({ post, onSave, onCancel, getAuthHeaders }: BlogP
             <CardContent className="space-y-4">
               {preview ? (
                 <div className="space-y-4">
-                  <div>
-                    {formData.image && (
-                      <img
-                        src={formData.image || "/placeholder.svg"}
-                        alt={formData.title}
-                        className="w-full h-64 object-cover rounded-lg mb-4"
-                      />
-                    )}
-                    <h1 className="text-3xl font-bold mb-2">{formData.title || "Untitled"}</h1>
-                    <p className="text-muted-foreground mb-4">{formData.excerpt}</p>
-                    <div className="prose max-w-none" dangerouslySetInnerHTML={{ __html: formData.content }} />
-                  </div>
+                  {formData.image && (
+                    <img
+                      src={formData.image || "/placeholder.svg"}
+                      alt={formData.title}
+                      className="w-full h-64 object-cover rounded-lg mb-4"
+                    />
+                  )}
+                  <h1 className="text-3xl font-bold mb-2">{formData.title || "Untitled"}</h1>
+                  <p className="text-muted-foreground mb-4">{formData.excerpt}</p>
+                  <div
+                    className="prose max-w-none"
+                    dangerouslySetInnerHTML={{ __html: formData.content }}
+                  />
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4">

@@ -5,6 +5,7 @@ import { GeistMono } from "geist/font/mono"
 import { Analytics } from "@vercel/analytics/next"
 import { Suspense } from "react"
 import { generateSEO, structuredData } from "@/lib/seo"
+import { GoogleAnalytics } from "nextjs-google-analytics";
 import "./globals.css"
 
 export const metadata: Metadata = generateSEO()
@@ -37,10 +38,14 @@ export default function RootLayout({
             __html: JSON.stringify(structuredData.service),
           }}
         />
+
+        // Google Anaylatics tags
+        
       </head>
       <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable} antialiased`}>
         <Suspense fallback={null}>{children}</Suspense>
         <Analytics />
+        <GoogleAnalytics trackPageViews gaMeasurementId="G-WV83P40F7K" />
       </body>
     </html>
   )

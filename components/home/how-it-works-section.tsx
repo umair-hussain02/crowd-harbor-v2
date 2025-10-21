@@ -26,7 +26,7 @@ export function HowItWorksSection() {
       title: "Empower Founders to Succeed",
       description:
         "From strategy to launch, we guide founders through every step of the fundraising journey, ensuring campaigns are optimized, compliant, and ready to attract investors.",
-      color: "text-accent-teal",
+      color: "text-accent",
       bgColor: "bg-accent-teal/10",
     },
   ]

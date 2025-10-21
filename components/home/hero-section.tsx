@@ -121,12 +121,12 @@ export function HeroSection() {
             className="relative"
           >
              <Image
-              src="1.png"
+              src="hero3.png"
               alt="Equity crowdfunding growth illustration"
-              width={1200}
-              height={800}
+              width={800}
+              height={500}
               priority
-              className="w-full h-auto"
+              className="w-[100%] h-auto m-auto"
             />
           </motion.div>
 

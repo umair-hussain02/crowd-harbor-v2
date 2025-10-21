@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { Mail, Linkedin, Twitter, Shield, Instagram, Facebook } from "lucide-react"
+import Image from "next/image"
 
 export function Footer() {
   return (
@@ -8,7 +9,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="col-span-1 md:col-span-2">
             <Link href="/" className="text-2xl font-bold">
-              CrowdHarbor
+               <Image src="/logov4.jpg" alt="CrowdHarbor Logo" width={55} height={55} />
             </Link>
             <p className="mt-4 text-gray-300 max-w-md">
               Connecting innovative startups with the right equity crowdfunding platforms — from Wefunder and StartEngine to Republic, Crowdcube, FundingHope and more.
@@ -61,6 +62,9 @@ export function Footer() {
               </a>
               <a href="https://www.facebook.com/share/1BqN87eTEp/" className="text-gray-300 hover:text-white transition-colors">
                 <Facebook className="h-5 w-5" />
+              </a>
+              <a href="https://www.tiktok.com/@crowdharbor?_t=ZS-90gXnsuUrqB&_r=1" className="text-gray-300 hover:text-white transition-colors">
+              tiktok
               </a>
 
             </div>

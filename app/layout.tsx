@@ -6,7 +6,8 @@ import { Analytics } from "@vercel/analytics/next"
 import { Suspense } from "react"
 import { generateSEO, structuredData } from "@/lib/seo"
 import { GoogleAnalytics } from '@next/third-parties/google'
-import "./globals.css"
+import "../styles/globals.css"
+
 
 export const metadata: Metadata = generateSEO()
 
@@ -18,9 +19,9 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <head>
-        <link rel="icon" href="/favicon.png" sizes="any" />
-        <link rel="icon" href="/favicon.png" type="image/svg+xml" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="icon" href="/logov4.jpg" sizes="any" />
+        <link rel="icon" href="/logov4.jpg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/logov4.jpg" />
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#667eea" />
         <meta name="msapplication-TileColor" content="#667eea" />

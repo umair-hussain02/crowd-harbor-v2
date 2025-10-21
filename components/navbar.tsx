@@ -39,7 +39,7 @@ export function Navbar() {
         <div className="flex justify-between items-center h-16">
           <div className="flex-shrink-0">
             <Link href="/" className="text-2xl font-bold text-primary">
-              <Image src="/logopng.png" alt="CrowdHarbor Logo" width={95} height={90} />
+              <Image src="/logov4.jpg" alt="CrowdHarbor Logo" width={55} height={55} />
             </Link>
           </div>
 

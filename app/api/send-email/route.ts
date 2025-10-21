@@ -92,27 +92,98 @@ export async function POST(request: NextRequest) {
     await transporter.sendMail(adminMail)
 
     // ✅ Confirmation email to founder
+    // subject: `Thank you for submitting your company!
     const userMail = {
       from: `"CrowdHarbor" <${process.env.RECIPIENT_EMAIL}>`,
       to: submission.founderEmail,
       subject: `Thank you for submitting your company!`,
       html: `
-        <div style="font-family: 'Segoe UI', Arial, sans-serif; background: #f9fafc; padding: 30px;">
-          <div style="max-width: 600px; margin: 0 auto; background: white; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
-            <div style="background: linear-gradient(135deg, #3b82f6, #1e3a8a); color: white; padding: 20px 25px; border-radius: 8px 8px 0 0;">
-              <h2 style="margin: 0;">Thank You, ${submission.ownerName.split(" ")[0]}!</h2>
-            </div>
-            <div style="padding: 25px; color: #333;">
-              <p>We’ve received your company details and our team will reach out shortly to discuss next steps.</p>
-              <blockquote style="margin: 10px 0; padding: 10px 15px; background: #f3f4f6; border-left: 3px solid #3b82f6;">
-                ${submission.companyDescription}
-              </blockquote>
-              <p>We look forward to learning more about <strong>${submission.companyName}</strong>!</p>
-              <p>— The CrowdHarbor Team</p>
-            </div>
-          </div>
-        </div>
-      `,
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CrowdHarbor</title>
+    <style>
+      body {
+        font-family: 'Segoe UI', Arial, sans-serif;
+        background-color: #f4f6f8;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        max-width: 600px;
+        margin: 30px auto;
+        background-color: #ffffff;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      }
+      .header {
+        background: #004aad;
+        padding: 30px 20px;
+        text-align: center;
+      }
+      .header img {
+        max-width: 160px;
+        height: auto;
+      }
+      .content {
+        padding: 30px 25px;
+        color: #333333;
+        line-height: 1.6;
+      }
+      .content h2 {
+        color: #004aad;
+        margin-top: 0;
+      }
+      .btn {
+        display: inline-block;
+        padding: 12px 24px;
+        background-color: #004aad;
+        color: white !important;
+        text-decoration: none;
+        border-radius: 6px;
+        margin: 15px 0;
+      }
+      .footer {
+        text-align: center;
+        font-size: 13px;
+        color: #777777;
+        padding: 20px;
+        border-top: 1px solid #eaeaea;
+      }
+      @media (max-width: 600px) {
+        .content, .header {
+          padding: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <img src="/" alt="CrowdHarbor Logo" />
+      </div>
+      <div class="content">
+        <h2>Hi ${submission.ownerName.split(" ")[0]},</h2>
+        <p>Exciting news! Your submission for <strong>${submission.companyName}</strong> has been approved. You’re now one step closer to joining the CrowdHarbor community of innovative founders and investors.</p>
+
+        <p>To complete your setup and explore investment opportunities, visit your account and finalize your profile today.</p>
+
+        <a href="https://crowdharbor.com/login" class="btn">Go to Dashboard</a>
+
+        <p>We’re thrilled to have you on board and can’t wait to see what’s next for <strong>${submission.companyName}</strong>!</p>
+        <p>— The CrowdHarbor Team</p>
+      </div>
+      <div class="footer">
+        <p>You are receiving this email because you registered on CrowdHarbor.</p>
+        <p>© ${new Date().getFullYear()} CrowdHarbor Inc. | All rights reserved.</p>
+      </div>
+    </div>
+  </body>
+  </html>
+  `
     }
 
     await transporter.sendMail(userMail)

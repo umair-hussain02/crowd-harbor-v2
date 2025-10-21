@@ -7,25 +7,48 @@ import { Badge } from "@/components/ui/badge";
 import { useAuth } from "@/lib/auth";
 import { BlogPostEditor } from "./blog-post-editor";
 import { BlogPostList } from "./blog-post-list";
+import Email from "./email";
 import { Plus, FileText, Users, TrendingUp, LogOut } from "lucide-react";
 import type { BlogPost } from "@/lib/blog";
+import { EmailForm } from "./email-form";
+import { AddTemplateForm } from "./add-template-form";
+
+// Type for emails
+interface EmailItem {
+  id: string;
+  subject: string;
+  recipient: string;
+  sentAt: string;
+  status: "sent" | "failed";
+}
 
 export function AdminDashboard() {
   const [posts, setPosts] = useState<BlogPost[]>([]);
+  const [emails, setEmails] = useState<EmailItem[]>([]);
   const [loading, setLoading] = useState(true);
   const [activeView, setActiveView] = useState<
-    "dashboard" | "posts" | "editor"
+    | "dashboard"
+    | "posts"
+    | "editor"
+    | "email"
+    | "emailForm"
+    | "templateForm"
   >("dashboard");
+
   const [editingPost, setEditingPost] = useState<BlogPost | null>(null);
   const { user, logout, getAuthHeaders } = useAuth();
 
+  // Fetch data
   useEffect(() => {
     fetchPosts();
+    fetchEmails();
   }, []);
 
+  // ------------------------
+  // BLOG FUNCTIONS
+  // ------------------------
   const fetchPosts = async () => {
     try {
-
       const response = await fetch("/api/admin/blogs", {
         headers: getAuthHeaders(),
       });
@@ -56,6 +79,37 @@ export function AdminDashboard() {
     setActiveView("editor");
   };
 
+  // ------------------------
+  // EMAIL FUNCTIONS
+  // ------------------------
+  const fetchEmails = async () => {
+    try {
+      const response = await fetch("/api/admin/emails", {
+        headers: getAuthHeaders(),
+      });
+      if (response.ok) {
+        const data = await response.json();
+        setEmails(data.emails || []);
+      }
+    } catch (error) {
+      console.error("Failed to fetch emails:", error);
+    }
+  };
+
+  const handleSendNewEmail = () => {
+    setActiveView("emailForm");
+  };
+  const handleNewTemplate = () => {
+    setActiveView("templateForm");
+  }
+  const handleEmailSent = () => {
+    fetchEmails();
+    setActiveView("email");
+  };
+
+  // ------------------------
+  // STATS + RENDER
+  // ------------------------
   const publishedPosts = posts.filter((post) => post.published);
   const draftPosts = posts.filter((post) => !post.published);
 
@@ -69,7 +123,7 @@ export function AdminDashboard() {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Header */}
+      {/* HEADER */}
       <header className="border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
@@ -90,6 +144,12 @@ export function AdminDashboard() {
                 >
                   Posts
                 </Button>
+                <Button
+                  variant={activeView === "email" ? "default" : "ghost"}
+                  onClick={() => setActiveView("email")}
+                >
+                  Email
+                </Button>
               </nav>
             </div>
 
@@ -106,6 +166,7 @@ export function AdminDashboard() {
         </div>
       </header>
 
+      {/* MAIN CONTENT */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {activeView === "dashboard" && (
           <div className="space-y-8">
@@ -226,6 +287,32 @@ export function AdminDashboard() {
             post={editingPost}
             onSave={handlePostSaved}
             onCancel={() => setActiveView("posts")}
+            getAuthHeaders={getAuthHeaders}
+          />
+        )}
+
+        {activeView === "email" && (
+          <Email
+            emails={emails}
+            onAddTemplate = {handleNewTemplate}
+            onSendNew={handleSendNewEmail}
+            onEmailDeleted={fetchEmails}
+            getAuthHeaders={getAuthHeaders}
+          />
+        )}
+        {activeView === "emailForm" && (
+          <EmailForm
+            onCancel={() => setActiveView("email")}
+            onEmailSent={handleEmailSent}
+            getAuthHeaders={getAuthHeaders}
+          />
+        )}
+        {activeView === "templateForm" && (
+          <AddTemplateForm
+            onCancel={() => setActiveView("email")}
+            onTemplateAdded={() => {
+              setActiveView("email");
+            }}
             getAuthHeaders={getAuthHeaders}
           />
         )}

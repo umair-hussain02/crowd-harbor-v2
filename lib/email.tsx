@@ -11,7 +11,7 @@ export interface EmailInquiry {
 
 export async function sendContactFormEmails(inquiry: EmailInquiry) {
   // Configure email transporter
-  const transporter = nodemailer.createTransporter({
+  const transporter = nodemailer.createTransport({
     host: process.env.SMTP_HOST || "smtp.gmail.com",
     port: Number.parseInt(process.env.SMTP_PORT || "587"),
     secure: false,

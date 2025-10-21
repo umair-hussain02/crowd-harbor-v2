@@ -20,7 +20,7 @@ export default function HomePage() {
           <HowItWorksSection />
           <PartnersSection />
           <WhyChooseSection />
-          <SuccessStoriesSection />
+          {/* <SuccessStoriesSection /> */}
           <BlogSection />
           <CTASection />
         </main>

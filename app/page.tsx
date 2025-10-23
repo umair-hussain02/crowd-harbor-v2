@@ -9,6 +9,7 @@ import { SuccessStoriesSection } from "@/components/home/success-stories-section
 import { BlogSection } from "@/components/home/blog-section"
 import { CTASection } from "@/components/home/cta-section"
 import Hero from "@/components/home/hero"
+import FaqSection from "@/components/home/faq"
 
 export default function HomePage() {
   return (
@@ -18,6 +19,7 @@ export default function HomePage() {
         <main>
           <HeroSection />
           <HowItWorksSection />
+          <FaqSection />
           <PartnersSection />
           <WhyChooseSection />
           {/* <SuccessStoriesSection /> */}

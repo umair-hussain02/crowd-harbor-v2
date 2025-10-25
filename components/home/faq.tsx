@@ -41,32 +41,33 @@ export default function FaqSection() {
   ],
 
   founder: [
-    {
-      question: "How does CrowdHarbor help me prepare for crowdfunding?",
-      answer:
-        "We guide you through the entire process — from assessing your business model and determining readiness, choosing the right platform, crafting your campaign strategy, setting up compliance and onboarding, through to launch.",
-    },
-    {
-      question: "Which crowdfunding platforms do you work with?",
-      answer:
-        "We have relationships with major global equity-crowdfunding platforms such as Crowdcube, StartEngine, Republic, and others. We help you choose the best-fit platform and region for your campaign.",
-    },
-    {
-      question: "What is the typical fundraising range you support?",
-      answer:
-        "Although ranges vary by platform and region, CrowdHarbor supports campaigns that raise from hundreds of thousands to several millions of euros/dollars, depending on readiness and fit.",
-    },
-    {
-      question: "What happens after we submit our company details?",
-      answer:
-        "After you submit your details, our team reviews your business model, target raise, use of funds, traction, investor profile, and regulatory fit. Then we recommend a path forward, required documentation, and launch timeline.",
-    },
-    {
-      question: "What are my obligations after launching the campaign?",
-      answer:
-        "Once live, you need to execute your campaign (marketing, investor outreach, updates), adhere to platform and regulatory requirements, and post-fundraise deliver on your business plan. CrowdHarbor remains available to guide you and ensure compliance.",
-    },
-  ],
+  {
+    question: "Do you charge founders / take equity?",
+    answer:
+      "No — CrowdHarbor’s matchmaking is completely free for founders (100%). Any platform fees or success terms are set and agreed directly between you and the crowdfunding platform.",
+  },
+  {
+    question: "How much can I raise, and who do you work with?",
+    answer:
+      "We commonly position campaigns for €200K–€8M+. We work with early-growth / pre-scale startups that have product market fit or strong pilots — especially SaaS, fintech, AI, marketplaces, hardware, and impact ventures in other categories.",
+  },
+  {
+    question: "How does the process work and how fast?",
+    answer:
+      "Reply with four lines (• Founder Full name & Email • Company description & website • Target raise • One-line traction). We do a quick readiness check, shortlist best-fit platforms, then deliver a warm intro to platform contacts. Most founders hear back within a few business days.",
+  },
+  {
+    question: "Who runs the campaign and handles legal/controls?",
+    answer:
+      "The crowdfunding platform assigns an expert campaign manager who builds and runs the raise. Legal terms, investor agreements, and campaign decisions are managed between you and the platform — CrowdHarbor only facilitates the warm intro and coordination.",
+  },
+  {
+    question: "What outcomes can I expect?",
+    answer:
+      "You get targeted platform matches, a platform-provided campaign manager, and a faster path to launch — increasing your odds compared to blind applications. Exact results depend on traction and preparation, but our founder-first approach removes upfront cost and reduces wasted time.",
+  },
+],
+
 };
 
   const [selectedCategory, setSelectedCategory] = useState("founder");

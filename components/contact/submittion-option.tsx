@@ -33,9 +33,9 @@ const SubmissionOptions: React.FC<ApplyOptionsProps> = ({
   ];
 
   return (
-    <div className="flex flex-col items-center justify-center px-4 py-10">
+    <div className="flex flex-col items-center justify-center ">
       {/* Card Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
+      <div className="grid grid-cols-2 gap-2 md:gap-8 w-full">
         {cards.map((card) => (
           <motion.div
             key={card.id}

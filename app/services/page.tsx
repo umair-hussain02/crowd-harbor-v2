@@ -23,14 +23,14 @@ export const metadata = generateSEO({
 
 export default function ServicesPage() {
   return (
-    <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
+    <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
       <div className="min-h-screen bg-background">
         <Navbar />
         <main>
           <ServicesHero />
           <StartupServices />
           {/* <InvestorServices /> */}
-          <ProcessOverview />
+          {/* <ProcessOverview /> */}
         </main>
         <Footer />
       </div>

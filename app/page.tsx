@@ -13,7 +13,7 @@ import FaqSection from "@/components/home/faq"
 
 export default function HomePage() {
   return (
-    <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
+    <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
       <div className="min-h-screen bg-background">
         <Navbar />
         <main>

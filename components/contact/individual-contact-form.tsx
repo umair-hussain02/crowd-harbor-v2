@@ -21,22 +21,23 @@ export function InquiryForm() {
 
     const formData = new FormData(e.currentTarget)
     const data = {
-      companyWebsite: formData.get("companyWebsite"),
-      companyName: formData.get("companyName"),
-      ownerName: formData.get("ownerName"),
-      founderEmail: formData.get("founderEmail"),
-      targetRaise: formData.get("targetRaise"),
-      companyDescription: formData.get("companyDescription"),
+      fullName: formData.get("fullName"),
+      email: formData.get("email"),
+      message: formData.get("message"),
     }
 
     try {
       const response = await fetch("/api/send-email", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      })
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({
+    formType: "general-query",
+    name: data.fullName,
+    email : data.email,
+    message: data.message,
+  }),
+});
+
 
       if (response.ok) {
         setIsSubmitted(true)
@@ -69,18 +70,27 @@ export function InquiryForm() {
       >
         <CheckCircle className="w-16 h-16 text-primary mx-auto mb-4" />
         <h3 className="text-2xl font-bold text-foreground mb-4">Thank You for Contacting Us!</h3>
+        <p className="text-muted-foreground mb-6">
+          We’ve received your message and will respond within 24 hours.
+        </p>
         <Button onClick={() => setIsSubmitted(false)} variant="outline">
-          Submit Another Application
+          Send Another Message
         </Button>
       </motion.div>
     )
   }
 
   return (
-    <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}>
+    <motion.div
+      initial={{ opacity: 0, x: -30 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.8 }}
+    >
       <div className="bg-card border border-border rounded-2xl p-8" id="contact-form">
         <h2 className="text-2xl font-bold text-foreground mb-6">Contact</h2>
+
         <form onSubmit={handleSubmit} className="space-y-6">
+          {/* Full Name + Email */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="space-y-2">
               <Label htmlFor="fullName">Full Name *</Label>
@@ -90,20 +100,56 @@ export function InquiryForm() {
               <Label htmlFor="email">Email *</Label>
               <Input id="email" name="email" type="email" required placeholder="Your email address" />
             </div>
-          </div>           
+          </div>
 
+          {/* Message */}
           <div className="space-y-2">
-            <Label htmlFor="message">Message</Label>
+            <Label htmlFor="message">Message *</Label>
             <Textarea
               id="message"
               name="message"
               required
               placeholder="Your message"
-              rows={10}
+              rows={8}
             />
           </div>
 
-          <Button type="submit" disabled={isSubmitting} className="w-full group bg-primary hover:bg-primary/90">
+          {/* Terms Agreement */}
+          <div className="flex items-start space-x-2">
+            <input
+              type="checkbox"
+              id="agreeTerms"
+              name="agreeTerms"
+              required
+              className="mt-1 h-4 w-4 text-primary border-gray-300 rounded"
+            />
+            <Label htmlFor="agreeTerms" className="text-sm text-muted-foreground">
+              I agree to the{" "}
+              <a
+                href="/terms"
+                target="_blank"
+                className="text-primary hover:underline"
+              >
+                Terms & Conditions
+              </a>{" "}
+              and{" "}
+              <a
+                href="/privacy"
+                target="_blank"
+                className="text-primary hover:underline"
+              >
+                Privacy Policy
+              </a>
+              .
+            </Label>
+          </div>
+
+          {/* Submit Button */}
+          <Button
+            type="submit"
+            disabled={isSubmitting}
+            className="w-full group bg-primary hover:bg-primary/90"
+          >
             {isSubmitting ? (
               "Sending..."
             ) : (

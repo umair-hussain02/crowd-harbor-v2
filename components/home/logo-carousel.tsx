@@ -1,33 +1,34 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export function LogoCarousel() {
   const logos = [
-    { name: "StartEngine", logo: "StartEngine" },
-    { name: "FundingHope", logo: "FundingHope" },
-    { name: "Republic", logo: "Republic" },
-    { name: "Crowdcube", logo: "CROWDCUBE" },
-    { name: "Wefunder", logo: "WEFUNDER" },
-    { name: "AngelInvestmentNetwork", logo: "ANGELINVESTMENTNETWORK" },
+    { name: "StartEngine", logo: "/startengine.webp" },
+    { name: "FundingHope", logo: "/funding-hope-logo-alt.webp" },
+    { name: "Republic", logo: "/Republic.webp" },
+    { name: "Crowdcube", logo: "/crowdcube.webp" },
+    { name: "Wefunder", logo: "/Wefunder.webp" },
+    { name: "AngelInvestmentNetwork", logo: "/angelinvestment.webp" },
   ];
 
-  // Duplicate logos for seamless loop
+  // Duplicate logos for smooth infinite scroll
   const duplicatedLogos = [...logos, ...logos];
 
   return (
     <div className="py-12 overflow-hidden">
-      <div className="relative">
+      <div className="relative w-full">
         <motion.div
-          className="flex space-x-16"
+          className="flex space-x-16 items-center"
           animate={{
-            x: [0, -50 * logos.length + "%"],
+            x: ["0%", "-50%"], // move left
           }}
           transition={{
             x: {
-              repeat: Number.POSITIVE_INFINITY,
+              repeat: Infinity,
               repeatType: "loop",
-              duration: 20,
+              duration: 25,
               ease: "linear",
             },
           }}
@@ -35,11 +36,15 @@ export function LogoCarousel() {
           {duplicatedLogos.map((company, index) => (
             <div
               key={`${company.name}-${index}`}
-              className="flex-shrink-0 flex items-center justify-center h-16 px-8"
+              className="flex-shrink-0 flex items-center justify-center h-20 w-40"
             >
-              <div className="text-2xl font-bold text-muted-foreground/60 hover:text-primary transition-colors duration-300 whitespace-nowrap">
-                {company.logo}
-              </div>
+              <Image
+                src={company.logo}
+                alt={company.name}
+                width={120}
+                height={60}
+                className="object-contain grayscale hover:grayscale-0 transition-all duration-300"
+              />
             </div>
           ))}
         </motion.div>

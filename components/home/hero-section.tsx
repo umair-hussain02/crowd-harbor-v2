@@ -94,10 +94,10 @@ export function HeroSection() {
             className="relative w-full lg:w-1/2 flex justify-center"
           >
             <Image
-              src="hero2.png"
+              src="hero5.webp"
               alt="Equity crowdfunding growth illustration"
-              width={800}
-              height={500}
+              width={600}
+              height={300}
               priority
               className="w-full h-auto rounded-2xl"
             />

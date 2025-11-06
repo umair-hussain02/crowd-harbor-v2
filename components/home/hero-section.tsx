@@ -17,27 +17,29 @@ export function HeroSection() {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden hero-gradient">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden ">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20">
         {/* Use flex-col-reverse on mobile, and flex-row on large screens */}
-        <div className="flex flex-col-reverse lg:flex-row gap-12 items-center">
-          
+        <div className="flex flex-col lg:flex-row gap-12 items-center">
           {/* Left side - Text content */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-            className="space-y-8 w-full lg:w-1/2 text-center lg:text-left"
+            className="space-y-5 w-full lg:w-1/2 text-left"
           >
-            <motion.h1
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.5 }}
-              className="text-3xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-tight"
+              className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground leading-tight pt-4"
             >
+              <motion.h1 className="text-accent/90 text-xl sm:text-2xl lg:text-3xl font-bold leading-tight pl-1">
+                CrowdHarbor
+              </motion.h1>
               Connecting Startups to{" "}
-              <span className="text-accent">Equity Crowdfunding Success</span>
-            </motion.h1>
+              <span className="">Equity Crowdfunding Success</span>
+            </motion.div>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -45,7 +47,7 @@ export function HeroSection() {
               transition={{ duration: 0.8, delay: 0.7 }}
               className="text-xl text-foreground leading-relaxed"
             >
-              Partnering with Crowdcube to fast-track your fundraising journey.
+              Empowering startups through strategic crowdfunding partnerships worldwide
             </motion.p>
 
             <motion.div
@@ -57,27 +59,25 @@ export function HeroSection() {
               <Button
                 onClick={scrollToContact}
                 size="lg"
-                className="text-lg px-8 py-6 group bg-accent hover:bg-accent/90 text-white border-0 w-full sm:w-auto"
+                className="text-lg px-8 py-6 group bg-accent hover:bg-accent/90 text-white border-0 w-full md:w-auto"
               >
                 <Calendar className="mr-2 h-5 w-5" />
                 Schedule Free Consultation
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
 
-              <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
+              <div className="flex flex-row gap-3 justify-evenly md:justify-start w-full md:w-auto">
                 <Button
                   asChild
                   variant="outline"
-                  size="lg"
-                  className="text-lg px-6 py-6 bg-background/10 backdrop-blur-sm border-foreground/30 text-foreground hover:bg-foreground/20 hover:text-chart-3"
+                  className="text-lg px-6 py-6 bg-background/10 backdrop-blur-sm border-foreground/30 text-foreground hover:bg-foreground/20 hover:text-chart-3 w-1/2 md:w-auto"
                 >
                   <Link href="/services">For Startups</Link>
                 </Button>
                 <Button
                   asChild
                   variant="outline"
-                  size="lg"
-                  className="text-lg px-6 py-6 bg-background/10 backdrop-blur-sm border-foreground/30 text-foreground hover:bg-foreground/20 hover:text-chart-3"
+                  className="text-lg px-6 py-6 bg-background/10 backdrop-blur-sm border-foreground/30 text-foreground hover:bg-foreground/20 hover:text-chart-3 w-1/2 md:w-auto"
                 >
                   <Link href="/services">For Investors</Link>
                 </Button>
@@ -93,7 +93,7 @@ export function HeroSection() {
             className="relative w-full lg:w-1/2 flex justify-center"
           >
             <Image
-              src="hero3.webp"
+              src="hero2.png"
               alt="Equity crowdfunding growth illustration"
               width={800}
               height={500}
@@ -115,6 +115,7 @@ export function HeroSection() {
           <div className="w-1 h-3 bg-white/50 rounded-full mt-2 animate-bounce" />
         </div>
       </motion.div>
+  
     </section>
   );
 }

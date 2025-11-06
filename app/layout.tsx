@@ -19,6 +19,10 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <head>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Momo+Trust+Sans:wght@200..800&display=swap"
+          rel="stylesheet"
+        />
         <link rel="icon" href="/logov4.jpg" sizes="any" />
         <link rel="icon" href="/logov4.jpg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/logov4.jpg" />
@@ -43,7 +47,8 @@ export default function RootLayout({
         // Google Anaylatics tags
         
       </head>
-      <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable} antialiased`}>
+      <body className="font-[Momo_Trust_Sans] antialiased bg-white text-gray-900"
+        style={{ fontFamily: '"Momo Trust Sans", sans-serif' }}>
         <Suspense fallback={null}>{children}</Suspense>
         <Analytics />
         <GoogleAnalytics gaId="G-WV83P40F7K" />
@@ -51,3 +56,5 @@ export default function RootLayout({
     </html>
   )
 }
+
+

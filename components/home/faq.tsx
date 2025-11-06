@@ -7,8 +7,7 @@ import { cn } from "@/lib/utils";
 
 export default function FaqSection() {
   const categories = {
-      "founder": "Founders",
-      "investor": "Investors",
+      "investor": "Founder",
   };
 
  const faqData = {

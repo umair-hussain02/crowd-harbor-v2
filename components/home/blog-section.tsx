@@ -167,7 +167,7 @@ export function BlogSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
           viewport={{ once: true }}
-          className="text-center"
+          className="text-center text-foreground"
         >
           <Button asChild variant="outline" size="lg">
             <Link href="/blogs">

@@ -45,7 +45,7 @@ export function Navbar() {
   };
 
   return (
-    <nav className="fixed top-0 w-full bg-background/80 backdrop-blur-md border-b border-border z-50">
+    <nav className="fixed top-0 left-1/2 -translate-x-1/2 w-[90%] md:w-[80%] mt-5 py-2 rounded-2xl bg-card/80 backdrop-blur-md border border-border z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex-shrink-0">
@@ -55,6 +55,15 @@ export function Navbar() {
                 alt="CrowdHarbor Logo"
                 width={55}
                 height={55}
+                className="hidden md:block"
+              />
+              {/* Mobile logo (smaller size) */}
+              <Image
+                src="/logov4.jpg"
+                alt="CrowdHarbor Logo"
+                width={40}
+                height={40}
+                className="block md:hidden"
               />
             </Link>
           </div>
@@ -107,9 +116,9 @@ export function Navbar() {
               onClick={() => setIsOpen(!isOpen)}
             >
               {isOpen ? (
-                <X className="h-6 w-6" />
+                <X className="h-8 w-8" />
               ) : (
-                <Menu className="h-6 w-6" />
+                <Menu className="h-8 w-8" />
               )}
             </Button>
           </div>

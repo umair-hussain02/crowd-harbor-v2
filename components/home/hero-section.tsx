@@ -17,8 +17,9 @@ export function HeroSection() {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden ">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20">
+    <section className="relative bg-card/50 min-h-screen flex items-center justify-center overflow-hidden  pt-30 md:pt-28 border-b border-border/50  ">
+      {/* <div className=" bg-card  mt-18 rounded-4xl "> */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
         {/* Use flex-col-reverse on mobile, and flex-row on large screens */}
         <div className="flex flex-col lg:flex-row gap-12 items-center">
           {/* Left side - Text content */}
@@ -111,10 +112,13 @@ export function HeroSection() {
         transition={{ duration: 1, delay: 1.5 }}
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
       >
-        <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-white/50 rounded-full mt-2 animate-bounce" />
+        <div className="w-6 h-10 border-2 border-foreground/30 rounded-full flex justify-center">
+          <div className="w-1 h-3 bg-foreground/50 rounded-full mt-2 animate-bounce" />
         </div>
       </motion.div>
+
+     
+
   
     </section>
   );

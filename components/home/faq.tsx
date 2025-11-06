@@ -7,37 +7,10 @@ import { cn } from "@/lib/utils";
 
 export default function FaqSection() {
   const categories = {
-      "investor": "Founder",
+      "founder": "Founder",
   };
 
  const faqData = {
-  investor: [
-    {
-      question: "What types of startups can I invest in via CrowdHarbor?",
-      answer:
-        "CrowdHarbor partners with innovative, growth-oriented startups that are preparing for equity crowdfunding rounds on major platforms (e.g., Reg CF, Reg A). We evaluate their traction, business model, and crowdfunding readiness before presenting them to investors.",
-    },
-    {
-      question: "How does CrowdHarbor select the crowdfunding platforms?",
-      answer:
-        "We leverage our trusted network of global equity-crowdfunding platforms (such as Crowdcube, StartEngine, Republic) and help match the startup with the platform that best fits its region, regulatory regime, and investor base.",
-    },
-    {
-      question: "What is the minimum investment I need to make?",
-      answer:
-        "Minimum investment amounts depend on the individual campaign and platform. CrowdHarbor will inform you of the terms for each opportunity. Ensure you review the details when the offering opens.",
-    },
-    {
-      question: "What kind of due diligence does CrowdHarbor conduct?",
-      answer:
-        "We perform initial screening of startups for traction, business model, regulatory compliance readiness, campaign strategy, and investor fit. This helps raise the quality and readiness of the campaigns presented to you.",
-    },
-    {
-      question: "How and when will I get updates on my investment?",
-      answer:
-        "Once you invest in a startup through a crowdfunding campaign, that platform typically provides communications and reporting. CrowdHarbor assists the startup’s preparation and launch, but follow-ups and ongoing investor updates are managed by the startup via the platform.",
-    },
-  ],
 
   founder: [
   {
@@ -94,7 +67,7 @@ export default function FaqSection() {
         </motion.div>
 
         {/* Tabs */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
+        {/* <div className="flex flex-wrap justify-center gap-4 mb-12">
           {Object.entries(categories).map(([key, label]) => (
             <button
               key={key}
@@ -109,7 +82,7 @@ export default function FaqSection() {
               {label}
             </button>
           ))}
-        </div>
+        </div> */}
 
         {/* FAQ List */}
         <div className="max-w-3xl mx-auto">

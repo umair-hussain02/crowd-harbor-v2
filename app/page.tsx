@@ -19,7 +19,7 @@ export default function HomePage() {
         <Navbar />
         <main>
           <HeroSection />
-          <CreativeSeparator />
+          {/* <CreativeSeparator /> */}
           <HowItWorksSection />
           <FaqSection />
           <PartnersSection />

@@ -2,6 +2,9 @@ import { NextRequest, NextResponse } from "next/server";
 import { renderToStaticMarkup } from "react-dom/server"
 import nodemailer from "nodemailer";
 import { queryConfirmationTemplate } from "@/lib/email-templates/queryConfirmationTemplate";
+import { companySubmissionTemplate } from "@/lib/email-templates/companySubmissionTemplate";
+import { adminCompanySubmissionTemplate } from "@/lib/email-templates/adminCompanySubmissionTemplate";
+import { adminQueryNotificationTemplate } from "@/lib/email-templates/adminQueryNotificationTemplate";
 
 export async function POST(request: NextRequest) {
   
@@ -75,20 +78,7 @@ export async function POST(request: NextRequest) {
         from: process.env.EMAIL_USER,
         to: process.env.RECIPIENT_EMAIL,
         subject: `🚀 New Founder Submission: ${submission.companyName}`,
-        html: `
-          <div style="font-family:'Segoe UI',sans-serif;">
-            <h2>New Founder Submission</h2>
-            <p><strong>Company Name:</strong> ${submission.companyName}</p>
-            <p><strong>Website:</strong> ${submission.companyWebsite}</p>
-            <p><strong>Owner Name:</strong> ${submission.ownerName}</p>
-            <p><strong>Email:</strong> ${submission.founderEmail}</p>
-            <p><strong>Target Raise:</strong> ${submission.targetRaise}</p>
-            <p><strong>Description:</strong> ${submission.companyDescription}</p>
-            <p><strong>Submitted At:</strong> ${new Date(
-              submission.timestamp
-            ).toLocaleString()}</p>
-          </div>
-        `,
+        html: adminCompanySubmissionTemplate(submission),
       };
 
       // 📨 User confirmation
@@ -96,15 +86,7 @@ export async function POST(request: NextRequest) {
         from: `"CrowdHarbor" <${process.env.RECIPIENT_EMAIL}>`,
         to: submission.founderEmail,
         subject: `Thank you for submitting your company!`,
-        html: `
-          <div style="font-family:'Segoe UI',sans-serif;">
-            <h2>Hi ${submission.ownerName.split(" ")[0]},</h2>
-            <p>Thanks for submitting <strong>${submission.companyName}</strong> to CrowdHarbor!</p>
-            <p>We’ll review your details and contact you soon.</p>
-            <a href="https://crowdharbor.com/login" style="background:#004aad;color:#fff;padding:10px 20px;border-radius:6px;text-decoration:none;">Go to Dashboard</a>
-            <p>— The CrowdHarbor Team</p>
-          </div>
-        `,
+        html:companySubmissionTemplate(submission) ,
       };
 
       await transporter.sendMail(adminMail);
@@ -155,7 +137,7 @@ export async function POST(request: NextRequest) {
         from: process.env.EMAIL_USER,
         to: process.env.RECIPIENT_EMAIL,
         subject: `💼 New Investor Submission: ${submission.name}`,
-        html: `Sent`,
+        html: adminQueryNotificationTemplate(submission),
       };
 
       const userMail = {

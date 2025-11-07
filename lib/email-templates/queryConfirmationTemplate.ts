@@ -9,7 +9,7 @@ export const queryConfirmationTemplate = (submission: {
     <div style="max-width:600px;margin:0 auto;background:#ffffff;border-radius:12px;overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,0.05);">
       <img src="https://crowdharbor.com/template-image.png" alt="CrowdHarbor" style="width:100%;height:auto;display:block;" />
       <div style="padding:30px;">
-        <h2 style="color:#004aad;font-size:22px;font-weight:600;">Hi ${submission.name.split(" ")[0]},</h2>
+        <h2 style="color:#FD6628;font-size:22px;font-weight:600;">Hi ${submission.name.split(" ")[0]},</h2>
         <p style="font-size:16px;line-height:1.6;margin:15px 0;">
           Thanks for reaching out to <strong>CrowdHarbor</strong>! 🎉  
           We’ve successfully received your query and our team will get back to you shortly.
@@ -18,14 +18,16 @@ export const queryConfirmationTemplate = (submission: {
           <p style="margin:0;font-size:15px;"><strong>Your Message:</strong></p>
           <p style="margin-top:8px;color:#374151;">"${submission.message}"</p>
         </div>
-        <p style="font-size:15px;line-height:1.6;">
-          In the meantime, feel free to explore your account or check out the latest updates from our platform.
+       <p style="font-size:15px;line-height:1.6;">
+          If you’d like to provide any additional details or documents, please reach out to our team directly.
         </p>
-        <a href="https://crowdharbor.com/login" 
-           style="background:#004aad;color:#ffffff;padding:12px 24px;border-radius:6px;
+
+        <a href="mailto:contact@crowdharbor.com"
+           style="background:#FD6628;color:#ffffff;padding:12px 24px;border-radius:6px;
                   text-decoration:none;font-weight:500;display:inline-block;margin-top:15px;">
-          Go to Dashboard
+          Contact Our Team
         </a>
+        
         <p style="margin-top:25px;font-size:14px;color:#6b7280;">— The CrowdHarbor Team</p>
       </div>
     </div>

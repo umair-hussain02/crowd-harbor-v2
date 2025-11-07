@@ -116,9 +116,9 @@ export function Navbar() {
               onClick={() => setIsOpen(!isOpen)}
             >
               {isOpen ? (
-                <X className="h-8 w-8" />
+                <X className="h-8 w-8 text-foreground" />
               ) : (
-                <Menu className="h-8 w-8" />
+                <Menu className="h-8 w-8 text-foreground" />
               )}
             </Button>
           </div>
@@ -127,7 +127,7 @@ export function Navbar() {
 
       {isOpen && (
         <div className="md:hidden">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-background border-b border-border">
+          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-card border-b border-border">
             {navigation.map((item) => {
               const IconComponent = item.icon;
               return (

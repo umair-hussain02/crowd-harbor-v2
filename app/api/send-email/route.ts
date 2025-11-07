@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { renderToStaticMarkup } from "react-dom/server"
-import { GeneralQueryConfirmationEmail } from "@/lib/email-templates/general-query-confirmation";
 import nodemailer from "nodemailer";
+import { queryConfirmationTemplate } from "@/lib/email-templates/queryConfirmationTemplate";
 
 export async function POST(request: NextRequest) {
   
@@ -162,15 +162,7 @@ export async function POST(request: NextRequest) {
         from: `"CrowdHarbor" <${process.env.RECIPIENT_EMAIL}>`,
         to: submission.email,
         subject: `Welcome to CrowdHarbor – Investment Interest Received`,
-        html: `
-          <div style="font-family:'Segoe UI',sans-serif;">
-            <h2>Hi ${submission.name.split(" ")[0]},</h2>
-            <p>We’ve received your interest in investing through CrowdHarbor.</p>
-            <p>Our team will reach out with potential opportunities soon!</p>
-            <a href="https://crowdharbor.com/login" style="background:#004aad;color:#fff;padding:10px 20px;border-radius:6px;text-decoration:none;">Go to Dashboard</a>
-            <p>— The CrowdHarbor Team</p>
-          </div>
-        `,
+        html: queryConfirmationTemplate(submission),
       };
 
       await transporter.sendMail(adminMail);

@@ -8,8 +8,13 @@ import { Textarea } from "@/components/ui/textarea"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Switch } from "@/components/ui/switch"
 import { Alert, AlertDescription } from "@/components/ui/alert"
-import { Save, ArrowLeft, Eye } from "lucide-react"
+import { Save, ArrowLeft, Eye, Upload } from "lucide-react"
+import dynamic from "next/dynamic"
 import type { BlogPost } from "@/lib/blog"
+
+// ✅ Dynamically import ReactQuill (avoids SSR issues)
+const ReactQuill = dynamic(() => import("react-quill"), { ssr: false })
+import "react-quill/dist/quill.snow.css"
 
 interface BlogPostEditorProps {
   post: BlogPost | null
@@ -30,6 +35,7 @@ export function BlogPostEditor({ post, onSave, onCancel, getAuthHeaders }: BlogP
   const [saving, setSaving] = useState(false)
   const [error, setError] = useState("")
   const [preview, setPreview] = useState(false)
+  const [uploading, setUploading] = useState(false)
 
   useEffect(() => {
     if (post) {
@@ -59,7 +65,6 @@ export function BlogPostEditor({ post, onSave, onCancel, getAuthHeaders }: BlogP
     setSaving(true)
 
     try {
-      // ✅ FIXED: use post._id instead of post.id
       const url = post?._id ? `/api/admin/blogs/${post._id}` : "/api/admin/blogs"
       const method = post?._id ? "PUT" : "POST"
 
@@ -88,6 +93,40 @@ export function BlogPostEditor({ post, onSave, onCancel, getAuthHeaders }: BlogP
 
   const handleInputChange = (field: string, value: string | boolean) => {
     setFormData((prev) => ({ ...prev, [field]: value }))
+  }
+
+  // ✅ Upload image to Cloudinary
+  const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0]
+    if (!file) return
+
+    setUploading(true)
+    setError("")
+
+    const formDataUpload = new FormData()
+    formDataUpload.append("file", file)
+    formDataUpload.append(
+      "upload_preset",
+      process.env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET || ""
+    )
+
+    try {
+      const res = await fetch(
+        `https://api.cloudinary.com/v1_1/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/upload`,
+        { method: "POST", body: formDataUpload }
+      )
+      const data = await res.json()
+      if (data.secure_url) {
+        setFormData((prev) => ({ ...prev, image: data.secure_url }))
+      } else {
+        setError("Upload failed. Please try again.")
+      }
+    } catch (err) {
+      console.error(err)
+      setError("Image upload failed.")
+    } finally {
+      setUploading(false)
+    }
   }
 
   return (
@@ -129,7 +168,7 @@ export function BlogPostEditor({ post, onSave, onCancel, getAuthHeaders }: BlogP
                 <div className="space-y-4">
                   {formData.image && (
                     <img
-                      src={formData.image || "/placeholder.svg"}
+                      src={formData.image}
                       alt={formData.title}
                       className="w-full h-64 object-cover rounded-lg mb-4"
                     />
@@ -170,18 +209,14 @@ export function BlogPostEditor({ post, onSave, onCancel, getAuthHeaders }: BlogP
                     />
                   </div>
 
+                  {/* ✅ Rich Text Editor */}
                   <div>
-                    <label htmlFor="content" className="block text-sm font-medium mb-2">
-                      Content (HTML)
-                    </label>
-                    <Textarea
-                      id="content"
+                    <label className="block text-sm font-medium mb-2">Content</label>
+                    <ReactQuill
+                      theme="snow"
                       value={formData.content}
-                      onChange={(e) => handleInputChange("content", e.target.value)}
-                      placeholder="Write your post content in HTML..."
-                      rows={20}
-                      className="font-mono text-sm"
-                      required
+                      onChange={(value) => handleInputChange("content", value)}
+                      placeholder="Write your post content here..."
                     />
                   </div>
                 </form>
@@ -190,6 +225,7 @@ export function BlogPostEditor({ post, onSave, onCancel, getAuthHeaders }: BlogP
           </Card>
         </div>
 
+        {/* Sidebar Settings */}
         <div className="space-y-6">
           <Card>
             <CardHeader>
@@ -209,16 +245,26 @@ export function BlogPostEditor({ post, onSave, onCancel, getAuthHeaders }: BlogP
                 />
               </div>
 
+              {/* ✅ Cloudinary Image Upload */}
               <div>
-                <label htmlFor="image" className="block text-sm font-medium mb-2">
-                  Featured Image URL
-                </label>
-                <Input
-                  id="image"
-                  value={formData.image}
-                  onChange={(e) => handleInputChange("image", e.target.value)}
-                  placeholder="https://example.com/image.jpg"
-                />
+                <label className="block text-sm font-medium mb-2">Featured Image</label>
+                {formData.image && (
+                  <img
+                    src={formData.image}
+                    alt="Preview"
+                    className="w-full h-40 object-cover rounded mb-2"
+                  />
+                )}
+                <div className="flex items-center space-x-2">
+                  <Input
+                    id="image"
+                    type="file"
+                    accept="image/*"
+                    onChange={handleImageUpload}
+                    disabled={uploading}
+                  />
+                  {uploading && <span className="text-sm text-gray-500">Uploading...</span>}
+                </div>
               </div>
 
               <div className="flex items-center justify-between">
@@ -231,19 +277,6 @@ export function BlogPostEditor({ post, onSave, onCancel, getAuthHeaders }: BlogP
                   onCheckedChange={(checked) => handleInputChange("published", checked)}
                 />
               </div>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle>Writing Tips</CardTitle>
-            </CardHeader>
-            <CardContent className="text-sm text-muted-foreground space-y-2">
-              <p>• Use HTML tags for formatting (h2, h3, p, ul, li, strong, em)</p>
-              <p>• Keep paragraphs short and scannable</p>
-              <p>• Include relevant keywords naturally</p>
-              <p>• Add internal links to other pages</p>
-              <p>• Use the preview to check formatting</p>
             </CardContent>
           </Card>
         </div>

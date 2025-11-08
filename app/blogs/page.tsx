@@ -181,7 +181,7 @@ export default function BlogsPage() {
 
   return (
     <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
-      <div className="min-h-screen bg-background">
+      <div className="min-h-screen bg-background pt-8">
         <Navbar />
         <div className="min-h-screen bg-background pt-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">

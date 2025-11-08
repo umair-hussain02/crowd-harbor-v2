@@ -9,7 +9,7 @@ import React from "react";
 export default function PrivacyPolicyPage() {
   return (
     <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
-      <div className="min-h-screen bg-background text-foreground flex flex-col">
+      <div className="min-h-screen bg-background text-foreground flex flex-col pt-24">
         <Navbar />
         <main className="flex-grow py-20 px-6 sm:px-10 lg:px-20">
           <motion.div

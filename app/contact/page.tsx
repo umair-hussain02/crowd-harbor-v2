@@ -25,7 +25,7 @@ export const metadata = generateSEO({
 export default function ContactPage() {
   return (
     <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
-      <div className="min-h-screen bg-background flex flex-col">
+      <div className="min-h-screen bg-background flex flex-col pt-24">
         <Navbar />
 
         <main className="flex-1">

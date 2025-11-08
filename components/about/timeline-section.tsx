@@ -47,7 +47,7 @@ export function TimelineSection() {
         </motion.div>
 
         <div className="relative">
-          <div className="absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-border" />
+          <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-border" />
 
           {timeline.map((item, index) => (
             <motion.div
@@ -66,7 +66,7 @@ export function TimelineSection() {
                 </div>
               </div>
 
-              <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-primary rounded-full border-4 border-background" />
+              <div className=" hidden md:block absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-primary rounded-full border-4 border-background" />
             </motion.div>
           ))}
         </div>

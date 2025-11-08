@@ -44,7 +44,7 @@ export default function RootLayout({
           }}
         />
 
-        // Google Anaylatics tags
+
         
       </head>
       <body className="font-[Momo_Trust_Sans] antialiased bg-white text-gray-900"

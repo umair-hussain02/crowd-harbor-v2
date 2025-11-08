@@ -26,7 +26,7 @@ export default function AboutPage() {
     <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
       <div className="min-h-screen bg-background">
         <Navbar />
-        <main>
+        <main className="pt-20">
           <AboutHero />
           <MissionSection />
           <TimelineSection />

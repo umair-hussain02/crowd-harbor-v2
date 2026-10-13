@@ -5,6 +5,7 @@ import { queryConfirmationTemplate } from "@/lib/email-templates/queryConfirmati
 import { companySubmissionTemplate } from "@/lib/email-templates/companySubmissionTemplate";
 import { adminCompanySubmissionTemplate } from "@/lib/email-templates/adminCompanySubmissionTemplate";
 import { adminQueryNotificationTemplate } from "@/lib/email-templates/adminQueryNotificationTemplate";
+import { adminPilotTemplate, pilotConfirmationTemplate } from "@/lib/email-templates/pilotTemplate";
 
 export async function POST(request: NextRequest) {
   
@@ -96,6 +97,44 @@ export async function POST(request: NextRequest) {
         success: true,
         message: "Founder submission received and emails sent.",
       });
+    }
+
+    // --- 🧩 HANDLE PILOT SIGNUP (coming-soon page) ---
+    if (formType === "pilot") {
+      const { email } = data;
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      if (typeof email !== "string" || !emailRegex.test(email.trim())) {
+        return NextResponse.json({ error: "Invalid email format" }, { status: 400 });
+      }
+
+      const submission = {
+        email: email.toLowerCase().trim().slice(0, 254),
+        timestamp: new Date().toISOString(),
+      };
+
+      // Notify the team (this is what must succeed)
+      await transporter.sendMail({
+        from: process.env.EMAIL_USER,
+        to: process.env.PILOT_RECIPIENT_EMAIL || "crowdharbor@gmail.com",
+        subject: `New Pilot Signup: ${submission.email}`,
+        replyTo: submission.email,
+        html: adminPilotTemplate(submission),
+      });
+
+      // Confirmation to the visitor; the signup still counts if this one fails
+      try {
+        await transporter.sendMail({
+          from: `"CrowdHarbor" <${process.env.EMAIL_USER}>`,
+          to: submission.email,
+          subject: "You're on the CrowdHarbor pilot list",
+          html: pilotConfirmationTemplate(),
+        });
+      } catch (confirmationError) {
+        console.error("Pilot confirmation email failed:", confirmationError);
+      }
+
+      return NextResponse.json({ success: true, message: "Pilot signup received." });
     }
 
     // --- 🧩 HANDLE QUERY FORM ---
